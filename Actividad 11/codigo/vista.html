@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productor consumidor</title>
+    <script src="ProductorConsumidor.js"></script>
+    <style>
+      .buffer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+
+        gap: 2em;
+      }
+      .spaceBuffer {
+        border-width: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <ul id="buffer" class="buffer"></ul>
+    </main>
+    <section id="seccionProductor">
+      <h3>👨‍🍳Productor</h3>
+      <ul>
+        <li>
+          <span id="estadoProductor"> Estado </span>
+        </li>
+      </ul>
+    </section>
+    <!-- Fin espacio productor -->
+    <section id="seccionConsumidor">
+      <h3>🍴Consumidor</h3>
+      <ul>
+        <li>
+          <span id="estadoConsumidor"> Estado </span>
+        </li>
+      </ul>
+    </section>
+    <!-- Fin espacio productor -->
+  </body>
+</html>
