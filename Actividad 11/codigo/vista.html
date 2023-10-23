@@ -6,38 +6,120 @@
     <title>Productor consumidor</title>
     <script src="ProductorConsumidor.js"></script>
     <style>
-      .buffer {
+      .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
 
-        gap: 2em;
+        grid-gap: 0.5em;
+      }
+      .twocolumns {
+        grid-template-columns: repeat(2, minmax(50%, 1fr));
+      }
+      .tencolumns {
+        grid-template-columns: repeat(10, 3em);
+        grid-template-rows: repeat(3, 3em);
+      }
+
+      .modern-list {
+        list-style: none;
+      }
+      .buffer {
       }
       .spaceBuffer {
-        border-width: 1px;
+        padding: 1em;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        border-radius: 50% !important;
+      }
+      .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-color: #fff;
+        border: 2px solid lightgray;
+        box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+        border-radius: 15px;
+      }
+      .header {
+        background-color: #1bf85ed1;
+      }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+      main {
+        width: 80%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .p-2 {
+        padding: 2em;
+      }
+      .p-1 {
+        padding: 1em;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      .w-50 {
+        width: 50%;
       }
     </style>
   </head>
   <body>
-    <main id="main">
-      <ul id="buffer" class="buffer"></ul>
+    <main id="main" class="card">
+      <div class="header p-1">Productor consumidor</div>
+      <article class="p-2">
+        <!-- Espacio dedicado para el buffer -->
+        <h3>Buffer</h3>
+        <ul id="buffer" class="grid tencolumns modern-list buffer"></ul>
+        <div class="w-100 grid twocolumns">
+          <section class="w-100" id="seccionProductor">
+            <h3>👨‍🍳Productor</h3>
+            <span id="estadoProductor"> Estado </span>
+            <ul class="grid modern-list">
+              <li class="tooltip">
+                🛌
+                <span class="tooltiptext">Durmiendo</span>
+              </li>
+              <li class="tooltip">
+                📲
+                <span class="tooltiptext">Accediendo</span>
+              </li>
+            </ul>
+          </section>
+          <!-- Fin espacio productor -->
+          <section class="w-100" id="seccionConsumidor">
+            <h3>🍴Consumidor</h3>
+            <span id="estadoConsumidor"> Estado </span>
+            <ul class="grid modern-list">
+              <li class="tooltip">
+                🛌
+                <span class="tooltiptext">Durmiendo</span>
+              </li>
+              <li class="tooltip">
+                📲
+                <span class="tooltiptext">Accediendo</span>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <!-- Fin espacio Consumidor -->
+      </article>
     </main>
-    <section id="seccionProductor">
-      <h3>👨‍🍳Productor</h3>
-      <ul>
-        <li>
-          <span id="estadoProductor"> Estado </span>
-        </li>
-      </ul>
-    </section>
-    <!-- Fin espacio productor -->
-    <section id="seccionConsumidor">
-      <h3>🍴Consumidor</h3>
-      <ul>
-        <li>
-          <span id="estadoConsumidor"> Estado </span>
-        </li>
-      </ul>
-    </section>
-    <!-- Fin espacio productor -->
   </body>
 </html>

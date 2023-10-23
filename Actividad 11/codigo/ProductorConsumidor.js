@@ -7,6 +7,8 @@ class ProductorConsumidor {
       this.buffer.push("🍽");
       let node = document.createElement("li");
       node.id = `spaceBuffer_${index}`;
+      node.classList.add(`card`);
+      node.classList.add(`spaceBuffer`);
       node.innerText = `🍽`;
       //Generación de espacio en vista
       this.bufferSeccion.appendChild(node);
