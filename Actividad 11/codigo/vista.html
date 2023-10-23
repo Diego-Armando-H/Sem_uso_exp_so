@@ -125,6 +125,13 @@
         transform: translateY(50%) !important;
         transition: 0.5s;
       }
+      .enfasis {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -137,57 +144,70 @@
         <div class="w-100 grid twocolumns">
           <div class="card">
             <div class="headerProductor"></div>
-            <section class="w-100 p-1 ps-0" id="seccionProductor">
+            <section class="p-1 ps-0" id="seccionProductor">
               <div class="grid twocolumns">
                 <div>
                   <h3>👨‍🍳Productor</h3>
                   <span id="estadoProductor"> Estado </span>
                 </div>
-                <ul class="grid modern-list row seccionEstados">
-                  <li id="prodEstSleep" class="tooltip elementoEstado">
-                    😴
-                    <span class="tooltiptext">Durmiendo</span>
-                  </li>
-                  <li id="prodEstAccesing" class="tooltip elementoEstado">
-                    📲
-                    <span class="tooltiptext">Accediendo</span>
-                  </li>
-                  <li id="prodEstProd" class="tooltip elementoEstado">
-                    👨‍🍳
-                    <span class="tooltiptext">Produciendo</span>
-                  </li>
-                </ul>
+                <div>
+                  <span id="consecutivosProd" class="enfasis">
+                    Consecutivos
+                  </span>
+                  <ul class="grid modern-list row seccionEstados">
+                    <li id="prodEstSleep" class="tooltip elementoEstado">
+                      😴
+                      <span class="tooltiptext">Durmiendo</span>
+                    </li>
+                    <li id="prodEstAccesing" class="tooltip elementoEstado">
+                      📲
+                      <span class="tooltiptext">Accediendo</span>
+                    </li>
+                    <li id="prodEstProd" class="tooltip elementoEstado">
+                      👨‍🍳
+                      <span class="tooltiptext">Produciendo</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </section>
           </div>
           <!-- Fin espacio productor -->
           <div class="card">
             <div class="headerConsumidor"></div>
-            <section class="w-100 p-1 ps-0" id="seccionConsumidor">
+            <section class="p-1 ps-0" id="seccionConsumidor">
               <div class="grid twocolumns">
                 <div>
-                  <h3>🍴Consumidor</h3>
+                  <h3>🙋‍♂️Consumidor</h3>
                   <span id="estadoConsumidor"> Estado </span>
                 </div>
-                <ul class="grid modern-list row seccionEstados">
-                  <li id="consEstSleep" class="tooltip elementoEstado">
-                    😴
-                    <span class="tooltiptext">Durmiendo</span>
-                  </li>
-                  <li id="consEstAccesing" class="tooltip elementoEstado">
-                    📲
-                    <span class="tooltiptext">Accediendo</span>
-                  </li>
-                  <li id="consEstCons" class="tooltip elementoEstado">
-                    🙋‍♂️
-                    <span class="tooltiptext">Consumiendo</span>
-                  </li>
-                </ul>
+                <div>
+                  <span id="consecutivosCons" class="enfasis">
+                    Consecutivos
+                  </span>
+                  <ul class="grid modern-list row seccionEstados">
+                    <li id="consEstSleep" class="tooltip elementoEstado">
+                      😴
+                      <span class="tooltiptext">Durmiendo</span>
+                    </li>
+                    <li id="consEstAccesing" class="tooltip elementoEstado">
+                      📲
+                      <span class="tooltiptext">Accediendo</span>
+                    </li>
+                    <li id="consEstCons" class="tooltip elementoEstado">
+                      🍴
+                      <span class="tooltiptext">Consumiendo</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </section>
           </div>
         </div>
         <!-- Fin espacio Consumidor -->
+        <div class="row">
+          <button onclick="reInitRuntime()">Reiniciar</button>
+        </div>
       </article>
     </main>
   </body>
