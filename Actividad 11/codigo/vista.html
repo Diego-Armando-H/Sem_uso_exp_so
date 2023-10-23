@@ -21,6 +21,7 @@
 
       .modern-list {
         list-style: none;
+        padding-left: 0px;
       }
       .buffer {
       }
@@ -37,9 +38,10 @@
         border: 2px solid lightgray;
         box-shadow: 2px 2px 8px 4px #d3d3d3d1;
         border-radius: 15px;
+        overflow: hidden;
       }
       .header {
-        background-color: #1bf85ed1;
+        background-color: #192231;
       }
       .tooltip .tooltiptext {
         visibility: hidden;
@@ -65,6 +67,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        background-color: #1f1f23;
       }
       .p-2 {
         padding: 2em;
@@ -72,11 +75,55 @@
       .p-1 {
         padding: 1em;
       }
+      .ps-0 {
+        padding-top: 0em;
+      }
       .w-100 {
         width: 100%;
       }
       .w-50 {
         width: 50%;
+      }
+      .headerProductor {
+        background-color: #494e6b;
+        overflow: hidden;
+        height: 2.5em;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .headerConsumidor {
+        background-color: #985e6d;
+        overflow: hidden;
+        height: 2.5em;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .row {
+        display: flex;
+      }
+
+      .elementoEstado {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-color: #fff;
+        border: 2px solid lightgray;
+        box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+        border-radius: 15px;
+        padding: 0.2em;
+        transform: translateY(85%) !important;
+        transition: 0.5s;
+      }
+      .seccionEstados {
+        margin-bottom: 0px;
+      }
+      .elementoEstadoActivo {
+        background-color: #4d2c3d;
+        border-color: #fff;
+        border: 2px solid lightgray;
+        box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+        border-radius: 15px;
+        padding: 0.2em;
+        transform: translateY(50%) !important;
+        transition: 0.5s;
       }
     </style>
   </head>
@@ -88,35 +135,57 @@
         <h3>Buffer</h3>
         <ul id="buffer" class="grid tencolumns modern-list buffer"></ul>
         <div class="w-100 grid twocolumns">
-          <section class="w-100" id="seccionProductor">
-            <h3>👨‍🍳Productor</h3>
-            <span id="estadoProductor"> Estado </span>
-            <ul class="grid modern-list">
-              <li class="tooltip">
-                🛌
-                <span class="tooltiptext">Durmiendo</span>
-              </li>
-              <li class="tooltip">
-                📲
-                <span class="tooltiptext">Accediendo</span>
-              </li>
-            </ul>
-          </section>
+          <div class="card">
+            <div class="headerProductor"></div>
+            <section class="w-100 p-1 ps-0" id="seccionProductor">
+              <div class="grid twocolumns">
+                <div>
+                  <h3>👨‍🍳Productor</h3>
+                  <span id="estadoProductor"> Estado </span>
+                </div>
+                <ul class="grid modern-list row seccionEstados">
+                  <li id="prodEstSleep" class="tooltip elementoEstado">
+                    😴
+                    <span class="tooltiptext">Durmiendo</span>
+                  </li>
+                  <li id="prodEstAccesing" class="tooltip elementoEstado">
+                    📲
+                    <span class="tooltiptext">Accediendo</span>
+                  </li>
+                  <li id="prodEstProd" class="tooltip elementoEstado">
+                    👨‍🍳
+                    <span class="tooltiptext">Produciendo</span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
           <!-- Fin espacio productor -->
-          <section class="w-100" id="seccionConsumidor">
-            <h3>🍴Consumidor</h3>
-            <span id="estadoConsumidor"> Estado </span>
-            <ul class="grid modern-list">
-              <li class="tooltip">
-                🛌
-                <span class="tooltiptext">Durmiendo</span>
-              </li>
-              <li class="tooltip">
-                📲
-                <span class="tooltiptext">Accediendo</span>
-              </li>
-            </ul>
-          </section>
+          <div class="card">
+            <div class="headerConsumidor"></div>
+            <section class="w-100 p-1 ps-0" id="seccionConsumidor">
+              <div class="grid twocolumns">
+                <div>
+                  <h3>🍴Consumidor</h3>
+                  <span id="estadoConsumidor"> Estado </span>
+                </div>
+                <ul class="grid modern-list row seccionEstados">
+                  <li id="consEstSleep" class="tooltip elementoEstado">
+                    😴
+                    <span class="tooltiptext">Durmiendo</span>
+                  </li>
+                  <li id="consEstAccesing" class="tooltip elementoEstado">
+                    📲
+                    <span class="tooltiptext">Accediendo</span>
+                  </li>
+                  <li id="consEstCons" class="tooltip elementoEstado">
+                    🙋‍♂️
+                    <span class="tooltiptext">Consumiendo</span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
         </div>
         <!-- Fin espacio Consumidor -->
       </article>
