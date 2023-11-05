@@ -139,11 +139,6 @@ class GestorComensales {
         if (comensal.estadoActual == 2) {
           //intenta acceder a los cubiertos
           //Si alguno de los tenedores no esta disponible, no avanzamos
-          console.log(
-            `comensal ${index}`,
-            !this.tenedores[comensal.izq].disponible,
-            !this.tenedores[comensal.der].disponible
-          );
           if (
             !this.tenedores[comensal.izq].disponible ||
             !this.tenedores[comensal.der].disponible
