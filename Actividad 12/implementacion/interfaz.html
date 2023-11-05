@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="ciclo.js"></script>
+    <script src="filosofoComensal.js"></script>
+    <script src="tenedor.js"></script>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-color: #fff;
+        border: 2px solid lightgray;
+        box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .comensales {
+        position: relative;
+        width: 400px;
+        height: 400px;
+      }
+      .comensales li:nth-child(1) {
+        position: absolute;
+        left: 0;
+        top: 40%;
+      }
+      .comensales li:nth-child(2) {
+        position: absolute;
+
+        left: 40%;
+      }
+      .comensales li:nth-child(3) {
+        position: absolute;
+        top: 40%;
+        right: 0;
+      }
+      .comensales li:nth-child(4) {
+        position: absolute;
+        right: 20%;
+        bottom: 0;
+      }
+      .comensales li:nth-child(5) {
+        position: absolute;
+        left: 20%;
+        bottom: 0;
+      }
+      /* ==============================================
+      Tenedores
+      ============================================== */
+      .comensales li:nth-child(6) {
+        position: absolute;
+        left: 25%;
+        bottom: 30%;
+      }
+      .comensales li:nth-child(7) {
+        position: absolute;
+        left: 25%;
+        top: 25%;
+      }
+      .comensales li:nth-child(8) {
+        position: absolute;
+        top: 25%;
+        right: 25%;
+      }
+      .comensales li:nth-child(9) {
+        position: absolute;
+        bottom: 30%;
+        right: 25%;
+      }
+      .comensales li:nth-child(10) {
+        position: absolute;
+        left: 45%;
+        bottom: 20%;
+      }
+      ul {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body class="card">
+    <!-- Comensales -->
+    <ul class="comensales">
+      <li>
+        <img id="estadoFilosofo0" src="" alt="" /><span id="filosofo0"></span>
+      </li>
+      <li>
+        <img id="estadoFilosofo1" src="" alt="" /><span id="filosofo1"></span>
+      </li>
+      <li>
+        <img id="estadoFilosofo2" src="" alt="" /><span id="filosofo2"></span>
+      </li>
+      <li>
+        <img id="estadoFilosofo3" src="" alt="" /><span id="filosofo3"></span>
+      </li>
+      <li>
+        <img id="estadoFilosofo4" src="" alt="" /><span id="filosofo4"></span>
+      </li>
+      <li id="tenedor0">🍴</li>
+      <li id="tenedor1">🍴</li>
+      <li id="tenedor2">🍴</li>
+      <li id="tenedor3">🍴</li>
+      <li id="tenedor4">🍴</li>
+    </ul>
+    <!-- Tenedores -->
+  </body>
+</html>

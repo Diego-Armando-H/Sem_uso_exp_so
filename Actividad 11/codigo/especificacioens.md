@@ -24,7 +24,7 @@ iii.    Mensajes que indiquen en todo momento, quien está trabajando, o quien i
 
 - [x] 10.  Al “despertar” intentará producir y/o consumir respectivamente, verificando que pueda hacerlo según sus condiciones.
 
-- [ ] 11.  Al entrar al buffer podrán producir y/o consumir de forma finita (de 1 a 5 elementos).
+- [x] 11.  Al entrar al buffer podrán producir y/o consumir de forma finita (de 1 a 5 elementos).
 
 - [x] 12.  El productor colocará elementos en orden, comenzando con la primera casilla, y continuando desde la última posición donde se quedó.
 
