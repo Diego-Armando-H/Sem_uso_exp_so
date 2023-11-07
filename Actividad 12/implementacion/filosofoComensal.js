@@ -10,11 +10,17 @@ class FilosofoComensal {
     3: "comiendo.png",
   };
   constructor() {
-    this.estadoActual = 1;
+    this._estadoActual = 1;
     this._vecesAlimentado = 0;
     this._izq; //indices en los que tomará al tenedor
     this._der; //indices en los que tomará al tenedor
     this._progresoEstado = 1; //Al contar a 3 se debe cambiar al estado siguiente
+  }
+  get estadoActual() {
+    return this._estadoActual;
+  }
+  set estadoActual(in_estadoActual) {
+    this._estadoActual = in_estadoActual;
   }
   get izq() {
     return this._izq;
@@ -31,13 +37,13 @@ class FilosofoComensal {
   }
 
   dormir() {
-    this.estadoActual = 1;
+    this._estadoActual = 1;
   }
   hambriento() {
-    this.estadoActual = 2;
+    this._estadoActual = 2;
   }
   comer() {
-    this.estadoActual = 3;
+    this._estadoActual = 3;
   }
   get progresoEstado() {
     return this._progresoEstado;
@@ -46,14 +52,14 @@ class FilosofoComensal {
     this._progresoEstado = in_progresoEstado;
   }
   get imgActual() {
-    return FilosofoComensal.imgs[this.estadoActual];
+    return FilosofoComensal.imgs[this._estadoActual];
   }
 
   //Debe ser utilizado al final de la ejecución de las acciones necesarioas
   progresarEstado() {
     if (this._progresoEstado % 3 == 0) {
       //Cambiar de estado
-      this.estadoActual = this.estadoActual >= 3 ? 1 : this.estadoActual + 1;
+      this._estadoActual = this._estadoActual >= 3 ? 1 : this._estadoActual + 1;
       this._progresoEstado = 1; //Reiiciamos progreso
       return;
     }
@@ -70,11 +76,11 @@ class FilosofoComensal {
   //en desuso: Inicia el ciclo de vida del filosofo comensal
   despertar() {
     setInterval(() => {
-      if (this.estadoActual == 1) {
+      if (this._estadoActual == 1) {
         //está dormido, no hacer nada
         return;
       }
-      if (this.estadoActual == 2) {
+      if (this._estadoActual == 2) {
         //intenta acceder a los cubiertos
         return;
       }
@@ -121,9 +127,23 @@ class GestorComensales {
       setInterval(() => {
         document.getElementById(`estadoFilosofo${index}`).src =
           comensal.imgActual;
+        document.getElementById(`filosofo${index}`).innerText = `Filosofo ${
+          index + 1
+        }`;
+        //).innerText = `f${index}t i${comensal.izq} d${comensal.der} c${comensal.vecesAlimentado}`;
         document.getElementById(
-          `filosofo${index}`
-        ).innerText = `f${index}t i${comensal.izq} d${comensal.der} c${comensal.vecesAlimentado}`;
+          `vecesComido${index}`
+        ).innerText = `${comensal.vecesAlimentado}`;
+        document.getElementById(`estado${index}`).innerText = `${
+          FilosofoComensal.estados[comensal.estadoActual]
+        }`;
+        /* Escritura tenedor */
+        document.getElementById(`tenedorIzq${index}`).innerText = `${
+          comensal.izq + 1
+        }`;
+        document.getElementById(`tenedorDer${index}`).innerText = `${
+          comensal.der + 1
+        }`;
         if (this.todosComieron()) {
           return;
         }
@@ -131,12 +151,12 @@ class GestorComensales {
         this.tenedores[comensal.izq].escribirSemaforo(comensal.izq);
         this.tenedores[comensal.der].escribirSemaforo(comensal.der);
 
-        if (comensal.estadoActual == 1) {
+        if (comensal._estadoActual == 1) {
           //está dormido, no hacer nada
           comensal.progresarEstado();
           return;
         }
-        if (comensal.estadoActual == 2) {
+        if (comensal._estadoActual == 2) {
           //intenta acceder a los cubiertos
           //Si alguno de los tenedores no esta disponible, no avanzamos
           if (

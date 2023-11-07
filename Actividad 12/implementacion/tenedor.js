@@ -28,8 +28,7 @@ class Tenedor {
   }
 
   escribirSemaforo(index) {
-    document.getElementById(
-      `tenedor${index}`
-    ).innerText = `🍴${index}-${this._semaforo}`;
+    document.getElementById(`tenedor${index}`).innerText = `🍴-${index + 1}`;
+    //-${this._semaforo}
   }
 }

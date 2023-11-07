@@ -9,8 +9,7 @@
     <script src="tenedor.js"></script>
     <style>
       body {
-        width: 100%;
-        height: 100%;
+        background-color: #1f1f23;
       }
       .card {
         background-color: rgba(255, 255, 255, 0.9);
@@ -22,8 +21,15 @@
       }
       .comensales {
         position: relative;
-        width: 400px;
-        height: 400px;
+        margin-right: 20px;
+        width: 420px;
+        height: 450px;
+      }
+      .espaciadoMesa {
+      }
+      .comensales li {
+        display: flex;
+        flex-direction: column;
       }
       .comensales li:nth-child(1) {
         position: absolute;
@@ -32,23 +38,22 @@
       }
       .comensales li:nth-child(2) {
         position: absolute;
-
-        left: 40%;
+        left: 20%;
+        bottom: 10px;
       }
       .comensales li:nth-child(3) {
+        position: absolute;
+        right: 20%;
+        bottom: 10px;
+      }
+      .comensales li:nth-child(4) {
         position: absolute;
         top: 40%;
         right: 0;
       }
-      .comensales li:nth-child(4) {
-        position: absolute;
-        right: 20%;
-        bottom: 0;
-      }
       .comensales li:nth-child(5) {
         position: absolute;
-        left: 20%;
-        bottom: 0;
+        left: 40%;
       }
       /* ==============================================
       Tenedores
@@ -56,57 +61,219 @@
       .comensales li:nth-child(6) {
         position: absolute;
         left: 25%;
-        bottom: 30%;
+        top: 25%;
       }
       .comensales li:nth-child(7) {
         position: absolute;
-        left: 25%;
-        top: 25%;
+        left: 22%;
+        bottom: 35%;
       }
       .comensales li:nth-child(8) {
-        position: absolute;
-        top: 25%;
-        right: 25%;
-      }
-      .comensales li:nth-child(9) {
-        position: absolute;
-        bottom: 30%;
-        right: 25%;
-      }
-      .comensales li:nth-child(10) {
         position: absolute;
         left: 45%;
         bottom: 20%;
       }
+      .comensales li:nth-child(9) {
+        position: absolute;
+        right: 22%;
+        bottom: 35%;
+      }
+      .comensales li:nth-child(10) {
+        position: absolute;
+        top: 25%;
+        right: 25%;
+      }
+      /* Comida */
+      .comensales li:nth-child(11) {
+        position: absolute;
+        left: 80px;
+        top: 40%;
+      }
+      .comensales li:nth-child(12) {
+        position: absolute;
+        left: 30%;
+        bottom: 100px;
+      }
+      .comensales li:nth-child(13) {
+        position: absolute;
+        right: 30%;
+        bottom: 100px;
+      }
+      .comensales li:nth-child(14) {
+        position: absolute;
+        top: 40%;
+        right: 90px;
+      }
+      .comensales li:nth-child(15) {
+        position: absolute;
+        left: 41%;
+        top: 90px;
+      }
+
       ul {
         list-style-type: none;
       }
+      .mesa {
+        border-radius: 50%;
+        border: 2px solid rgb(23, 23, 23);
+        background-color: rgba(209, 112, 64, 0.82);
+        left: 70px;
+        top: 140px;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        margin: 1em;
+      }
+      .spacioFilosofo p {
+        margin: 0.5em;
+      }
+      .spacioFilosofo {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+      .headerProductor {
+        background-color: #494e6b;
+        overflow: hidden;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        color: #fff;
+        padding-left: 0.5em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+      .headerConsumidor {
+        background-color: #985e6d;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        color: #fff;
+        padding-left: 0.5em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+      .statesSection {
+        margin-left: 1em;
+        margin-bottom: 1em;
+      }
     </style>
   </head>
-  <body class="card">
-    <!-- Comensales -->
-    <ul class="comensales">
-      <li>
-        <img id="estadoFilosofo0" src="" alt="" /><span id="filosofo0"></span>
-      </li>
-      <li>
-        <img id="estadoFilosofo1" src="" alt="" /><span id="filosofo1"></span>
-      </li>
-      <li>
-        <img id="estadoFilosofo2" src="" alt="" /><span id="filosofo2"></span>
-      </li>
-      <li>
-        <img id="estadoFilosofo3" src="" alt="" /><span id="filosofo3"></span>
-      </li>
-      <li>
-        <img id="estadoFilosofo4" src="" alt="" /><span id="filosofo4"></span>
-      </li>
-      <li id="tenedor0">🍴</li>
-      <li id="tenedor1">🍴</li>
-      <li id="tenedor2">🍴</li>
-      <li id="tenedor3">🍴</li>
-      <li id="tenedor4">🍴</li>
-    </ul>
+  <body>
+    <div class="card" style="width: 100%; height: 100%">
+      <h4 class="headerConsumidor">Problema filosofos comensales</h4>
+      <div style="width: 100%; height: 100%; display: flex">
+        <!-- Comensales -->
+        <div class="mesa"></div>
+        <div class="espaciadoMesa">
+          <ul class="comensales">
+            <li>
+              <img id="estadoFilosofo0" src="" alt="" /><span
+                id="filosofo0"
+              ></span>
+            </li>
+            <li>
+              <img id="estadoFilosofo1" src="" alt="" /><span
+                id="filosofo1"
+              ></span>
+            </li>
+            <li>
+              <img id="estadoFilosofo2" src="" alt="" /><span
+                id="filosofo2"
+              ></span>
+            </li>
+            <li>
+              <img id="estadoFilosofo3" src="" alt="" /><span
+                id="filosofo3"
+              ></span>
+            </li>
+            <li>
+              <img id="estadoFilosofo4" src="" alt="" /><span
+                id="filosofo4"
+              ></span>
+            </li>
+            <li id="tenedor0">🍴</li>
+            <li id="tenedor1">🍴</li>
+            <li id="tenedor2">🍴</li>
+            <li id="tenedor3">🍴</li>
+            <li id="tenedor4">🍴</li>
+            <!-- Comida -->
+            <li><img src="spagueti 2.png" alt="" /></li>
+            <li><img src="spagueti 2.png" alt="" /></li>
+            <li><img src="spagueti 2.png" alt="" /></li>
+            <li><img src="spagueti 2.png" alt="" /></li>
+            <li><img src="spagueti 2.png" alt="" /></li>
+          </ul>
+          <div class="card statesSection">
+            <h4 class="headerConsumidor">
+              Estados de los filósofos comensales
+            </h4>
+            <ul class="">
+              <li>
+                <img src="durmiedo.png" alt="" />
+                <span><b>Durmiendo:</b> No realiza ninguna acción| </span>
+              </li>
+              <li>
+                <img src="pensando.png" alt="" /><span
+                  ><b>Pensando: </b>Mira si tiene tenedores disponibles
+                </span>
+              </li>
+              <li>
+                <img src="comiendo.png" alt="" /><span
+                  ><b>Comiendo: </b>Utiliza y bloquea el acceso a sus tenedores
+                  adyascentes
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Tarjetas de estados -->
+        <ul>
+          <li class="card">
+            <h4 class="headerProductor">Filosofo Comensal 1</h4>
+            <div class="spacioFilosofo">
+              <p>Veces comido: <b id="vecesComido0">1</b></p>
+              <p>Estado actual: <b id="estado0">1</b></p>
+              <p>Tenedor izq: <b id="tenedorIzq0">1</b></p>
+              <p>Tenedor der: <b id="tenedorDer0">1</b></p>
+            </div>
+          </li>
+          <li class="card">
+            <h4 class="headerProductor">Filosofo Comensal 2</h4>
+            <div class="spacioFilosofo">
+              <p>Veces comido: <b id="vecesComido1">1</b></p>
+              <p>Estado actual: <b id="estado1">1</b></p>
+              <p>Tenedor izq: <b id="tenedorIzq1">1</b></p>
+              <p>Tenedor der: <b id="tenedorDer1">1</b></p>
+            </div>
+          </li>
+          <li class="card">
+            <h4 class="headerProductor">Filosofo Comensal 3</h4>
+            <div class="spacioFilosofo">
+              <p>Veces comido: <b id="vecesComido2">1</b></p>
+              <p>Estado actual: <b id="estado2">1</b></p>
+              <p>Tenedor izq: <b id="tenedorIzq2">1</b></p>
+              <p>Tenedor der: <b id="tenedorDer2">1</b></p>
+            </div>
+          </li>
+          <li class="card">
+            <h4 class="headerProductor">Filosofo Comensal 4</h4>
+            <div class="spacioFilosofo">
+              <p>Veces comido: <b id="vecesComido3">1</b></p>
+              <p>Estado actual: <b id="estado3">1</b></p>
+              <p>Tenedor izq: <b id="tenedorIzq3">1</b></p>
+              <p>Tenedor der: <b id="tenedorDer3">1</b></p>
+            </div>
+          </li>
+          <li class="card">
+            <h4 class="headerProductor">Filosofo Comensal 5</h4>
+            <div class="spacioFilosofo">
+              <p>Veces comido: <b id="vecesComido4">1</b></p>
+              <p>Estado actual: <b id="estado4">1</b></p>
+              <p>Tenedor izq: <b id="tenedorIzq4">1</b></p>
+              <p>Tenedor der: <b id="tenedorDer4">1</b></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <!-- Tenedores -->
   </body>
 </html>
