@@ -1,0 +1,1 @@
+Conservar imagernes de importancia no directamente relacionadas a un proyecto (en ese caso generar un proyecto en "documentos"). Se deben crear carpetas diferentes para cada categoría que se necesite por imagenes 
